@@ -1,0 +1,105 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="medicina_deportiva.jugador">
+      <field name="name">Listado de jugadores</field>
+      <field name="model">medicina_deportiva.jugador</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+          <field name="edad"/>
+          <field name="lesiones"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="medicina_deportiva.medico">
+      <field name="name">Listado de medicos</field>
+      <field name="model">medicina_deportiva.medico</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="apellidos"/>
+          <field name="edad"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="medicina_deportiva.lesion">
+      <field name="name">Listado de lesiones</field>
+      <field name="model">medicina_deportiva.lesion</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="jugador"/>
+          <field name="medico"/>
+          <field name="fecha"/>
+          <field name="tiempo_recuperacion"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="medicina_deportiva.jugador_action_window">
+      <field name="name">Listado de jugadores</field>
+      <field name="res_model">medicina_deportiva.jugador</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medicina_deportiva.medico_action_window">
+      <field name="name">Listado de medicos</field>
+      <field name="res_model">medicina_deportiva.medico</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medicina_deportiva.lesion_action_window">
+      <field name="name">Listado de lesiones</field>
+      <field name="res_model">medicina_deportiva.lesion</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="medicina_deportiva.action_server">
+      <field name="name">Medicina_deportiva server</field>
+      <field name="model_id" ref="model_medicina_deportiva_medicina_deportiva"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+
+    <menuitem name="Medicina deportiva" id="medicina_deportiva.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Gestion jugadores" id="medicina_deportiva.menu_1" parent="medicina_deportiva.menu_root"/>
+    <menuitem name="Gestion medicos" id="medicina_deportiva.menu_2" parent="medicina_deportiva.menu_root"/>
+    <menuitem name="Gestion lestiones" id="medicina_deportiva.menu_3" parent="medicina_deportiva.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="Listado de jugadores" id="medicina_deportiva.menu_1_list" parent="medicina_deportiva.menu_1"
+              action="medicina_deportiva.jugador_action_window"/>
+    <menuitem name="Listado de medicos" id="medicina_deportiva.menu_2_list" parent="medicina_deportiva.menu_2"
+              action="medicina_deportiva.medico_action_window"/>
+    <menuitem name="Listado de lesiones" id="medicina_deportiva.menu_3_list" parent="medicina_deportiva.menu_3"
+              action="medicina_deportiva.lesion_action_window"/>
+
+
+  </data>
+</odoo>

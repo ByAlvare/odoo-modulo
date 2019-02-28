@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<odoo>
+  <data>
+
+    <record model="medicina_deportiva.jugador" id="medicina_deportiva_jugador_01">
+      <field name="nombre">Juan</field>
+      <field name="name">16499674E</field>
+      <field name="apellidos">Ibañez Sota</field>
+      <field name="edad">22</field>
+      <field name="lesiones">0</field>
+    </record>
+
+    <record model="medicina_deportiva.jugador" id="medicina_deportiva_jugador_02">
+      <field name="nombre">David</field>
+      <field name="name">16456213T</field>
+      <field name="apellidos">Ruiz Garcia</field>
+      <field name="edad">23</field>
+      <field name="lesiones">0</field>
+    </record>
+
+    <record model="medicina_deportiva.medico" id="medicina_deportiva_medico_01">
+      <field name="nombre">Diego</field>
+      <field name="name">16379421K</field>
+      <field name="apellidos">Gonzalez Sanchez</field>
+      <field name="edad">34</field>
+    </record>
+
+    <record model="medicina_deportiva.medico" id="medicina_deportiva_medico_02">
+      <field name="nombre">Alvaro</field>
+      <field name="name">16492834F</field>
+      <field name="apellidos">Martinez Cuevas</field>
+      <field name="edad">33</field>
+    </record>
+
+    <record model="medicina_deportiva.lesion" id="medicina_deportiva_lesion_01">
+      <field name="nombre">Esguince de tobillo</field>
+      <field name="name">E23</field>
+      <field name="fecha">13/02/2019</field>
+      <field name="tiempo_recuperacion">18</field>
+     <field name="jugador" ref="medicina_deportiva_jugador_01"></field>
+    <!-- <field name="medico" ref="medicina_deportiva_medico_01"></field>-->
+    </record>
+
+    <record model="medicina_deportiva.lesion" id="medicina_deportiva_lesion_02">
+      <field name="nombre">Rotura de ligamento cruzado</field>
+      <field name="name">R18</field>
+      <field name="fecha">10/8/2018</field>
+      <field name="tiempo_recuperacion">60</field>
+      <field name="jugador" ref="medicina_deportiva_jugador_01"></field>
+      <!--<field name="medico" ref="medicina_deportiva_medico_02"></field>-->
+    </record>
+
+
+    <record model="medicina_deportiva.lesion" id="medicina_deportiva_lesion_03">
+      <field name="nombre">Luxacion de hombro</field>
+      <field name="name">L08</field>
+      <field name="fecha">12/12/2018</field>
+      <field name="tiempo_recuperacion">15</field>
+      <field name="jugador" ref="medicina_deportiva_jugador_02"></field>
+      <!--<field name="medico" ref="medicina_deportiva_medico_02"></field>-->
+    </record>
+
+
+
+
+
+  </data>
+</odoo>

@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medicina_deportiva_medicina_deportiva,medicina_deportiva.medicina_deportiva,model_medicina_deportiva_medicina_deportiva,,1,0,0,0
